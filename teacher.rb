@@ -1,8 +1,8 @@
 require './person'
 
 class Teacher < Person
-  def inittialize(specialization, age, name = 'Unkown')
-    super(age, name, true)
+  def initialize(specialization, age, name = 'unknown')
+    super(age, name)
     @specialization = specialization
   end
 
@@ -10,3 +10,6 @@ class Teacher < Person
     true
   end
 end
+
+aunty = Teacher.new('mazi', 10, 'amadi')
+puts aunty.validate_name
