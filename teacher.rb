@@ -10,6 +10,3 @@ class Teacher < Person
     true
   end
 end
-
-aunty = Teacher.new('mazi', 10, 'amadi')
-puts aunty.validate_name
