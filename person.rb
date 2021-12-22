@@ -1,7 +1,7 @@
 require './corrector'
 
 class Person
-  attr_accessor :name, :age, :parent_permission
+  attr_accessor :name, :age, :parent_permission, :rentals
 
   attr_writer :id
 
@@ -15,6 +15,11 @@ class Person
     @parent_permission = parent_permission
 
     @corrector = Corrector.new
+    @rentals = []
+  end
+
+  def add_rental(person)
+    @rentals.push(person)
   end
 
   def validate_name
