@@ -1,9 +1,11 @@
-require './corrector'
+require_relative './corrector'
+
+require_relative './rental'
 
 class Person
   attr_accessor :name, :age, :parent_permission
 
-  attr_writer :id
+  attr_reader :id, :rentals
 
   def initialize(age, name = 'Unkown', parent_permission: true)
     @id = Random.rand(1..1000)
@@ -15,6 +17,12 @@ class Person
     @parent_permission = parent_permission
 
     @corrector = Corrector.new
+
+    @rentals = []
+  end
+
+  def add_rental(book, date)
+    Rental.new(book, date, self)
   end
 
   def validate_name
