@@ -34,7 +34,7 @@ class App
 
       break if option == '7'
 
-      handle_action option
+      handle_action(option)
     end
 
     puts 'Thank you for using this app!'
@@ -110,7 +110,7 @@ class App
     print 'Specialization: '
     specialization = gets.chomp
 
-    teacher = Teacher.new(specialization: specialization, age: age, name: name)
+    teacher = Teacher.new(specialization, age, name)
     @people.push(teacher)
 
     puts 'Person created successfully'
